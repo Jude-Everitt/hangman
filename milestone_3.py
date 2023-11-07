@@ -21,7 +21,7 @@ class Word:
    def check_guess(self, guess):
            if (guess in self.word):
               print("Good guess!", guess, "is in the word!")
-              break
+            
            else:
               print("Sorry,", guess, "is not in the word. Try again.")           
 

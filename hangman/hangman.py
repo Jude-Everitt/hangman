@@ -11,6 +11,7 @@ class Hangman(word_list, num_lives):
       self.num_lives = num_lives
       self.word_list = word_list
       self.list_of_guesses = []
+     
 
    def check_guess(self, guess):
       self.guess.lower()
@@ -23,6 +24,7 @@ class Hangman(word_list, num_lives):
          self.num_lives -= 1
          print("Unlucky!", self.guess, ", is not in the word")
          print("You have ",self.num_lives," lives left!")
+
 
    def ask_for_input(self):
       while(True):

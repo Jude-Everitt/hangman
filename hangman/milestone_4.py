@@ -3,17 +3,15 @@ import random
 word_list = ["pineapple", "coconut", "strawberry", "lime", "lemmon", "apple", "banana", "grape", "passionfruit", "melon", "watermelon", "orange"]
 num_lives = 5
 
-class Hangman(word_list, num_lives == 5):
-   def __init__(self):
+class Hangman(word_list, num_lives = 5):
+   def __init__(self, word_list, num_lives = 5):
 ##attributes
-      self.word_list = word_list 
-      self.num_lives = num_lives
       self.word = random.choice(self.word_list)
       self.word_guessed = ["_" for char in self.word]
       self.num_lives = num_lives
       self.word_list = word_list
       self.list_of_guesses = []
-     
+      
 
    def check_guess(self, guess):
       self.guess.lower()
@@ -26,7 +24,7 @@ class Hangman(word_list, num_lives == 5):
          self.num_lives -= 1
          print("Unlucky!", self.guess, ", is not in the word")
          print("You have ",self.num_lives," lives left!")
-
+      
 
    def ask_for_input(self):
       while(True):
@@ -38,5 +36,7 @@ class Hangman(word_list, num_lives == 5):
          else:
             self.check_guess(self.guess)
             self.list_of_guesses.append(self.guess)
+      
 
-Hangman(word_list, num_lives == 5)
+test = Hangman(word_list, num_lives == 5)
+print(test.word_list)
