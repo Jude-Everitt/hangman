@@ -6,6 +6,8 @@ num_lives = 5
 class Hangman(word_list, num_lives == 5):
    def __init__(self):
 ##attributes
+      self.word_list = word_list 
+      self.num_lives = num_lives
       self.word = random.choice(self.word_list)
       self.word_guessed = ["_" for char in self.word]
       self.num_lives = num_lives
