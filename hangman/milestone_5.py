@@ -2,23 +2,25 @@ import random
 ##parameters
 word_list = ["pineapple", "coconut", "strawberry", "lime", "lemmon", "apple", "banana", "grape", "passionfruit", "melon", "watermelon", "orange"]
 num_lives = 5
-class Hangman(word_list, num_lives = 5):
+class Hangman():
    def __init__(self, word_list, num_lives = 5):
 ##attributes
-      self.word = random.choice(self.word_list)
-      self.word_guessed = ["_" for char in self.word]
-      self.num_lives = num_lives
       self.word_list = word_list
+      self.num_lives = num_lives
+      self.word = random.choice(self.word_list)
+      self.word_guessed = ["_" for letter in self.word]
       self.list_of_guesses = []
+      self.num_letters = len(set(self.word))
       pass
 
    def check_guess(self, guess):
       self.guess.lower()
       if self.guess in self.word:
          print("Good guess!", self.guess, ", is in the word!")
-         for char in self.word:
-            if self.guess == self.word[char]:
-               self.word_guessed[char] == self.guess
+         for letter in range(len(self.word)):
+            if self.guess == self.word[letter]:
+               self.word_guessed[letter] == self.guess
+               print(self.word_guessed)
          self.num_letters -= 1
       else:
          self.num_lives -= 1
@@ -36,6 +38,7 @@ class Hangman(word_list, num_lives = 5):
          else:
             self.check_guess(self.guess)
             self.list_of_guesses.append(self.guess)
+            print("Already guessed letters:", self.list_of_guesses)
       pass
       
 def play_game(word_list):
@@ -44,12 +47,15 @@ def play_game(word_list):
    while(True):
       if num_lives == 0:
          print("Sorry! You loose.")
+         break
       elif num_lives >= 1:
          game.ask_for_input()
       elif num_lives != 0 and num_letters == 0:
          print("Congratulations, you've won!")
+         break
    pass
 
 if __name__ == '__main__':
     word_list = ["pineapple", "coconut", "strawberry", "lime", "lemmon", "apple", "banana", "grape", "passionfruit", "melon", "watermelon", "orange"]
     play_game(word_list)
+    
