@@ -19,7 +19,7 @@ class Hangman(word_list, num_lives = 5):
          for char in self.word:
             if self.guess == self.word[char]:
                self.word_guessed[char] == self.guess
-         num_letters -= 1
+         self.num_letters -= 1
       else:
          self.num_lives -= 1
          print("Unlucky!", self.guess, ", is not in the word")
