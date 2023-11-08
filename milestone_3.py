@@ -1,30 +1,25 @@
 import random
 
 word_list = ["mango", "lime", "pineapple", "coconut", "banana"]
-class Word:
+word = random.choice(word_list)
+guess = input("Enter a letter.\n")
 
-   def __init__(self, words):
-       self.word = random.choice(words)
-       self.ask_for_input()
+def check_guess():
+   if (guess in word):
+      print("Good guess!", guess, "is in the word!")      
+   else:
+      print("Sorry,", guess, "is not in the word. Try again.") 
 
-
-   def ask_for_input(self):
-       while True:
-           guess = input("Enter a letter.\n")
-           if ((guess.isalpha() == True) and (len(guess) == 1)):
-              self.check_guess(guess) 
-              print("That is a valid input.")
-           else:
-              print("That is not a valid input. Try again.")
-
-
-   def check_guess(self, guess):
-           if (guess in self.word):
-              print("Good guess!", guess, "is in the word!")
-            
-           else:
-              print("Sorry,", guess, "is not in the word. Try again.")           
-
-Word(word_list)
+def ask_for_input():
+   while (True):
+      guess = input("Enter a letter.\n")
+      if ((guess.isalpha() == True) and (len(guess) == 1)):
+         print("That is a valid input.")
+         break
+      else:
+         print("That is not a valid input. Try again.")
+   check_guess() 
+   
+ask_for_input()
 
 
