@@ -1,8 +1,8 @@
 # Hangman
 Hangman is a classic game in which a player thinks of a word and the other player tries to guess that word within a certain amount of attempts.
 
-This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it. 
 ## Table of contents 
+
 1. Hangman Template - "hangman_Template.py": Provides a template of the final hangman game, outlining the order in which classes and functions are made and their docstring comments.
 2. Milestone 2 - "milestone_2.py": Provides a random word from a list and checks if an inputed letter is a valid single alphebetical input.
 3. Milestone 3 - "milestone_3.py": Defines two functions from milestone 2 and also evaluates if the letter input is within the randomly generated word.
@@ -10,7 +10,7 @@ This is an implementation of the Hangman game, where the computer thinks of a wo
 5. Milestone 5 - "milestone_5.py": A complete game of hangman!
 
 ## Project description
-(what it does) (aim of the project) (what i learned)
+
 This is an implementation of the Hangman game, where the computer thinks of a word and the user tries to guess it.
 
 A class called "Hangman" is created to initialise a word list and a specific number of lives, and sets up the gme by choosing a random word from the list and initialising the word_guessed list. The classes parameters passed through are the list of words and the number of lives. It sets up attributes which can be used throughout the different class methods. Such attributes are; the random word generated, a display of the guessed word using correctly guessed letters by the user, the unique number of letters that have not been guess within the word by the user, the number of lives the user is on and a list of letters the user has entered/tried throught the game. These attributes are initialised within the __init__ method. 
@@ -29,9 +29,27 @@ The `if __name__ == '__main__':` block is used to ensure that the code inside it
 
 ## Instilation instructions
 
-
+To run this code:
+- Clone repository
+  1. Go to GitHub.com and navigate to the main page of the repository.
+  2. Click <>code.
+  3. Copy the URL for the repository.
+  4. Open terminal
+  5. Change the current working directory to the location where you want the cloned directory.
+  6. Type: git clone pasted_URL_here
+  7. Press Enter to create local clone.
+- Open file within on VSCode within repository
+- When making changes and updating them
+  1. git add .
+  2. git commit -m "comment"
+  3. git push
+     This updates any changes to the code to the Git repository, where changes can be tracked. 
 
 ## Usage instructions
+
+When the code is running. Simply input a letter. The game will say if the letter is a valid input and if it is in the random word or not. Continue until you run out of lives or guess the word correctly within your number of lives. The program will stop when either of these are met. If you want to play again, run the code again. 
 ## File structure
+
 The technology stacks used in this code are Python and random. 
 ## License information 
+license: UNLICENSED
