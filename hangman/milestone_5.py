@@ -1,13 +1,10 @@
-## imports random number from pythons built in module
 import random
-##parameters that are going to be passed into the game of Hangman 
+##parameters
 word_list = ["pineapple", "coconut", "strawberry", "lime", "lemmon", "apple", "banana", "grape", "passionfruit", "melon", "watermelon", "orange"]
 num_lives = 5
 # The Hangman class initializes a game of Hangman with a word list and a specified number of lives,
-# and keeps track of the word to be guessed, the guessed letters, and the number of letters in the
-# word.
-class Hangman():
-       '''
+# and sets up the game by choosing a random word from the list and initializing the word_guessed list.
+'''
     A Hangman Game that asks the user for a letter and checks if it is in the word.
     It starts with a default number of lives and a random word from the word_list.
 
@@ -40,9 +37,10 @@ class Hangman():
         Checks if the letter is in the word.
     ask_letter()
         Asks the user for a letter.
-    '''
+'''
+class Hangman():
+   
    def __init__(self, word_list, num_lives = 5):
-##attributes
       self.word_list = word_list
       self.num_lives = num_lives
       self.word = random.choice(self.word_list)
@@ -53,14 +51,14 @@ class Hangman():
       print(self.word_guessed)
       pass
 
+   
    def check_guess(self, guess):
       """
-      The function `check_guess` takes a guess as input, checks if the guess is in the word, updates the
-      word_guessed list if the guess is correct, decreases the number of remaining letters if the guess is
-      correct, decreases the number of lives if the guess is incorrect, and prints appropriate messages.
+      The function checks if a guessed letter is in a word and updates the guessed word accordingly,
+      while also keeping track of the number of lives remaining.
       
-      :param guess: The `guess` parameter is a string that represents the player's guess for a letter in
-      the word
+      :param guess: The `guess` parameter is a string that represents the player's guess for a letter
+      in the word
       """
       self.guess.lower()
       if self.guess in self.word:
@@ -70,8 +68,6 @@ class Hangman():
                self.word_guessed[char] = self.guess
          print(self.word_guessed)
          self.num_letters -= 1
-         
-         
       else:
          print(self.word_guessed)
          self.num_lives -= 1
@@ -79,10 +75,11 @@ class Hangman():
          print("You have ",self.num_lives," lives left!")
       pass
 
+
    def ask_for_input(self):
       """
-      The function asks the user to input a letter, checks if the input is valid, and keeps track of the
-      guessed letters.
+      The function asks the user to input a letter, checks if the input is valid, and keeps track of
+      the guessed letters.
       """
       while (self.num_lives != 0 and self.num_letters != 0):
          self.guess = input("Please enter a letter.\n")
@@ -95,9 +92,9 @@ class Hangman():
             self.check_guess(self.guess)
             self.list_of_guesses.append(self.guess)
             print("Already guessed letters:", self.list_of_guesses)  
-            
       pass
-      
+
+
 def play_game(word_list):
    """
    The function "play_game" allows the user to play a game of Hangman using a given word list.
