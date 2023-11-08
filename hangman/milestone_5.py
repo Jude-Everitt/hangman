@@ -8,18 +8,20 @@ class Hangman():
       self.word_list = word_list
       self.num_lives = num_lives
       self.word = random.choice(self.word_list)
-      self.word_guessed = ["_" for letter in self.word]
+      self.word_guessed = str(["_"] * len(self.word))
       self.list_of_guesses = []
       self.num_letters = len(set(self.word))
+      print("The mystery word has,", self.num_letters, "characters")
+      print(self.word_guessed)
       pass
 
    def check_guess(self, guess):
       self.guess.lower()
       if self.guess in self.word:
          print("Good guess!", self.guess, ", is in the word!")
-         for letter in range(len(self.word)):
-            if self.guess == self.word[letter]:
-               self.word_guessed[letter] == self.guess
+         for char in range(len(self.word)):
+            if self.guess == self.word[char]:
+               self.word_guessed[char] == self.guess
                print(self.word_guessed)
          self.num_letters -= 1
       else:
