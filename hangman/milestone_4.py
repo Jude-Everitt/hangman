@@ -6,8 +6,7 @@ num_lives = 5
 # The Hangman class initializes a game of Hangman with a word list and a specified number of lives,
 # and keeps track of the word to be guessed, the guessed letters, and the number of letters in the
 # word.
-class Hangman():
-       '''
+'''
     A Hangman Game that asks the user for a letter and checks if it is in the word.
     It starts with a default number of lives and a random word from the word_list.
 
@@ -40,9 +39,11 @@ class Hangman():
         Checks if the letter is in the word.
     ask_letter()
         Asks the user for a letter.
-    '''
+'''
+class Hangman():
+       
    def __init__(self, word_list, num_lives = 5):
-##attributes
+
       self.word_list = word_list
       self.num_lives = num_lives
       self.word = random.choice(self.word_list)
