@@ -20,7 +20,7 @@ def ask_for_input():
    The function asks the user to enter a single letter and checks if the input is valid.
    """
    while (True):
-      guess = input("Enter a letter.\n")
+      
       if ((guess.isalpha() == True) and (len(guess) == 1)):
          print("That is a valid input.")
          break
